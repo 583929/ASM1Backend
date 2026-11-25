@@ -1,0 +1,15 @@
+namespace GameApi.Models;
+
+public class Character
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string Class { get; set; } = string.Empty;
+    public int Level { get; set; } = 1;
+    public int Hp { get; set; } = 100;
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+    // Khóa ngoại + navigation (theo quy ước <TênLớp>Id)
+    public int AccountId { get; set; }
+    public Account? Account { get; set; }
+}
